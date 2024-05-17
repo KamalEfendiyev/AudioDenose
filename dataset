@@ -1,0 +1,4 @@
+https://www.kaggle.com/datasets/kamalefes/cleannoisy-dataset - перед отправкой в нейронную сеть требуется:
+
+обьединить аудиозаписи из папок clean_dataset-20240514T094743Z-001 и clean_dataset-20240514T094743Z-002
+обьединить аудиозаписи из папок noisy_dataset-20240514T094842Z-001 и noisy_dataset-20240514T094842Z-002
