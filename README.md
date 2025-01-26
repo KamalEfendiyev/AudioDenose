@@ -1,86 +1,73 @@
-# AudioDenose
-Noise Processing and Classification Project
+# Noise Processing and Classification Project
 
-This repository contains tools and notebooks for preprocessing, noise generation, noise overlay, feature extraction, noise classification, and denoising using various techniques. The project is designed for audio processing enthusiasts and researchers working with noise classification and denoising techniques.
+Этот репозиторий содержит инструменты и ноутбуки для предварительной обработки, генерации шума, наложения шума, извлечения признаков, классификации шума и подавления шума с использованием различных техник. Проект предназначен для энтузиастов обработки аудио и исследователей, работающих с классификацией и подавлением шума.
 
-Repository Structure
+## 📋 Основные функции
 
-Preprocessing and Noise Generation
+- Распределение шума по папкам.
+- Наложение шума на чистые аудиозаписи.
+- Преобразование аудиофайлов в спектрограммы.
+- Преобразование аудиофайлов в MFCC (Mel-Frequency Cepstral Coefficients).
+- Классификация спектрограмм с использованием модели Inception.
+- Классификация MFCC с использованием свёрточной нейронной сети (CNN).
+- Подавление шума с помощью медианной фильтрации и фильтрации Винера.
+- Реализация автоэнкодера на основе CNN для подавления шума.
+- Оценка среднеквадратической ошибки (MSE) после обработки.
 
-noise_preprocess.ipynb: Jupyter notebook for distributing noise across folders.
+## 🛠️ Установка и запуск
 
-noisy_overlay.ipynb: Jupyter notebook for overlaying noise onto clean audio recordings.
+### 🔧 Установка зависимостей
 
-Feature Extraction
+1. Убедитесь, что у вас установлен Python 3.8 или новее.
+2. Установите зависимости с помощью команды:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-spec_preprocess.ipynb: Jupyter notebook for converting audio files into spectrograms.
+### 📂 Структура проекта
 
-mfcc_preprocess.ipynb: Jupyter notebook for converting audio files into MFCC (Mel-Frequency Cepstral Coefficients).
+```plaintext
+project_folder/
+│
+├── noise_preprocess.ipynb         # Распределение шума по папкам
+├── noisy_overlay.ipynb            # Наложение шума на аудиофайлы
+├── spec_preprocess.ipynb          # Преобразование аудио в спектрограммы
+├── mfcc_preprocess.ipynb          # Преобразование аудио в MFCC
+├── noise_classification_inception.ipynb  # Классификация спектрограмм
+├── noise_classification_cnn.ipynb # Классификация MFCC
+├── medfilt_denoise.ipynb          # Медианная фильтрация
+├── wiener_denoise.ipynb           # Фильтрация Винера
+├── mse_wiener_medfilt.ipynb       # Оценка MSE
+├── denoising_autoencoder.ipynb    # CNN-автоэнкодер для подавления шума
+└── dataset                        # Файл с ссылкой на датасет и инструкцией
+```
 
-Noise Classification
+### 🚀 Запуск ноутбуков
 
-noise_classification_inception.ipynb: Jupyter notebook for classifying spectrograms using an Inception-based model.
+1. Откройте нужный ноутбук в Jupyter Lab, VS Code или Google Colab.
+2. Выполните ячейки, следуя инструкциям внутри.
 
-noise_classification_cnn.ipynb: Jupyter notebook for classifying MFCC features using a Convolutional Neural Network (CNN).
+## 📚 Описание ноутбуков
 
-Noise Denoising
+- **`noise_preprocess.ipynb`** - Распределяет шумовые данные по папкам.
+- **`noisy_overlay.ipynb`** - Накладывает шум на чистые аудиофайлы.
+- **`spec_preprocess.ipynb`** - Преобразует аудиофайлы в спектрограммы.
+- **`mfcc_preprocess.ipynb`** - Преобразует аудиофайлы в MFCC.
+- **`noise_classification_inception.ipynb`** - Классифицирует спектрограммы с использованием модели Inception.
+- **`noise_classification_cnn.ipynb`** - Классифицирует MFCC с использованием CNN.
+- **`medfilt_denoise.ipynb`** - Применяет медианную фильтрацию.
+- **`wiener_denoise.ipynb`** - Применяет фильтрацию Винера.
+- **`mse_wiener_medfilt.ipynb`** - Рассчитывает среднеквадратическую ошибку после обработки.
+- **`denoising_autoencoder.ipynb`** - Применяет CNN-автоэнкодер для подавления шума.
 
-medfilt_denoise.ipynb: Jupyter notebook for applying median filtering for noise suppression.
+## ❗ Замечания
 
-wiener_denoise.ipynb: Jupyter notebook for applying Wiener filtering for noise suppression.
+- Убедитесь, что датасет скачан и подготовлен перед запуском ноутбуков.
+- Для повышения производительности используйте GPU для вычислений.
+- Оцените результаты подавления шума с помощью MSE-метрик.
 
-Evaluation and Metrics
+## 📜 Лицензия
 
-mse_wiener_medfilt.ipynb: Jupyter notebook for calculating the Mean Squared Error (MSE) for audio files processed with median filtering and Wiener filtering.
+Проект выпущен под лицензией MIT. Подробнее в файле [LICENSE](LICENSE).
 
-Deep Learning for Denoising
-
-denoising_autoencoder.ipynb: Jupyter notebook for implementing a Convolutional Neural Network (CNN)-based autoencoder for denoising audio files.
-
-Dataset
-
-dataset: A text file containing a link to the dataset and instructions for working with it.
-
-Instructions for Use
-
-Clone the repository:
-
-git clone https://github.com/your-username/noise-processing.git
-cd noise-processing
-
-Follow the instructions in the dataset file to download and organize the dataset.
-
-Open the desired Jupyter notebooks in your preferred environment (e.g., Jupyter Lab, VS Code, or Google Colab) to execute the specific tasks.
-
-Requirements
-
-Install the required Python libraries using the following command:
-
-pip install -r requirements.txt
-
-Suggested Libraries:
-
-numpy
-
-scipy
-
-librosa
-
-matplotlib
-
-tensorflow or pytorch (depending on your deep learning framework)
-
-scikit-learn
-
-notebook
-
-License
-
-This project is released under the MIT License. See the LICENSE file for more details.
-
-Acknowledgments
-
-Special thanks to the contributors and the open-source community for tools and datasets used in this project.
-
-For any questions or issues, please open an issue in the repository or contact the maintainers.
 
